@@ -7,65 +7,25 @@
 *.o
 *.obj
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-*.so.*
-
 # Fortran module files
 *.mod
 *.smod
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-# Build directories
-build/
-Build/
-build-*/
-
-# CMake generated files
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-install_manifest.txt
-compile_commands.json
-
-# Temporary files
-*.tmp
+/.vs
+*.tlog
 *.log
-*.bak
-*.swp
-
-# vcpkg
-vcpkg_installed/
-
-# debug information files
-*.dwo
-
-# test output & cache
-Testing/
-.cache/
-
-# Visual Studio
-.vs/
+/SexyAppFramework/Debug
+Debug/LawnProject.pdb
+Debug/LawnProject.exe
+/.vs/PlantsVsZombies/v17
+.vs/PlantsVsZombies/v17/.suo
+.vs/PlantsVsZombies/v17/Browse.VC.db
+/enc_temp_folder
+/Debug/crash.txt
+/Debug/ddraw.dll
+/Debug/dxwrapper.dll
+/Debug/dxwrapper.ini
+/Debug/dxwrapper-lawnproject.log
+/Release/
+/SexyAppFramework/Release
+/PopcapTools/projects.txt
