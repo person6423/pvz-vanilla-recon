@@ -5344,7 +5344,7 @@ void Board::NextWaveComing()
 	{
 		mApp->PlaySample(Sexy::SOUND_AWOOGA);
 	}
-	else if ((mApp->IsWhackAZombieLevel() && mCurrentWave == mNumWaves - 1) || IsFlagWave(mCurrentWave))
+	else if (IsFlagWave(mCurrentWave)) //--VANILLA_FIX: Do not play the siren sound on the last wave of Whack a Zombie.
 	{
 		mApp->PlaySample(Sexy::SOUND_SIREN);
 	}
