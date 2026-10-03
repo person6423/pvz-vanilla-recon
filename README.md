@@ -1,16 +1,16 @@
 # pvz-vanilla-recon
 Based on PvZ Updated Base, vanilla-recon aims to negate every visual and functional inconsistency and bug that Updated Base features, without adding anything new to the original PvZ.
 
-The goal here is to make the Updated Base decomp/recon as close as possible to vanilla OG PvZ.
+The goal here is to make the Updated Base reconstruction as close as possible to vanilla OG PvZ.
 This means that there will be **no new features, enhancements, or any sort of change to the gameplay.** (apart from when fixing bugs and inconsistencies)
-This creates the perfect choice for a clean reconstruction of PvZ that misses out on the bloat that many other reconstructions have. (most, if not all, using const variables instead of #IFDEFs, which bloats the exe file size even more.)
+This creates the perfect choice for a clean reconstruction of PvZ that misses out on the bloat that many other reconstructions have. (most, if not all, using const variables instead of `#IFDEF`s, which bloats the exe file size even more.)
 
 >[!NOTE]
 vanilla-recon's model version of PvZ is 1.0.0.1051 (Plants vs. Zombies Original PC Edition) (This is NOT Game Of The Year Edition)
 
 # 'VANILLA_FIX'
-Every fix or change that's been made to the code is (maybe not thoroughly T_T) explained through comments with the keyword 'VANILLA_FIX'.
-This makes finding my edits WAY easier. By using CTRL+SHIFT+F to search for 'VANILLA_FIX', you'll be able to quickly find everything I've done, meaning you can easily apply them to your own mods without having to switch!
+Every fix or change that's been made to the code is (maybe not thoroughly T_T) explained through comments with the keyword `VANILLA_FIX`.
+This makes finding my edits WAY easier. By using CTRL+SHIFT+F to search for `VANILLA_FIX`, you'll be able to quickly find everything I've done, meaning you can easily apply them to your own mods without having to switch!
 
 Example Fixes:
 ```c++
@@ -71,7 +71,7 @@ Many, many changes have been made to come closer to original PvZ. These changes 
 ### Q: Has modding / the workflow been made any different?
 A: Nope! Vanilla-recon is built to keep the simplicity of modding standard reconstructions while providing the extensive list of bug fixes that more complex reconstructions have.
 Modding with vanilla-recon is no different to modding with Updated Base, Quality Enhanced, LawnTweaks, meaning the recon is more accessible and easy to use without any extra steps at all.
-### Q: I would like for ..... to be added, could you do that?
+### Q: I would like for (.....) to be added, could you do that?
 A: It depends, but most-likely no. Features present in vanilla-recon are meant to be kept in-line with OG PvZ. Meaning extras that other reconstructions may have such as Quick-Play, 2X Speed Button and Zombatar will not be added.
 This includes bugs and unintended issues that OG PvZ has, such as hypnotized zombotanies shooting backwards, meaning they too will not be fixed.
 ### Q: Why should I use this?
