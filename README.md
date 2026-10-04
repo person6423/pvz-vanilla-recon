@@ -71,7 +71,7 @@ A: I'm sure you can do it here in GitHub Issues (if I remember correctly) though
 ### Special Thanks
 - [@Electr0Gunner](https://github.com/Electr0Gunner) - Additional Fixes, Creator of [ResoddedFramework](https://github.com/LawnProject/ResoddedFramework) which was a great help
 - [@InLiothixi](https://github.com/InLiothixi) - Additional Fixes, Creator of [Stable-Decompile](https://github.com/InLiothixi/Stable-Decompile) which was a great help
-- [@verse090](https://github.com/verse090) and [@cardbored-code](https://github.com/cardbored-code) - Name of the project <sub>(they both also came up with, soon to be released, 'chocolate-recon' :shushing_face:)</sub>
+- [@verse090](https://github.com/verse090) and [@cardbored-code](https://github.com/cardbored-code) - Name of the project.
 - Original authors of the 0.9.9 decompilation
 - Modders that touched up and created Updated Base
 ### Acknowledgements
