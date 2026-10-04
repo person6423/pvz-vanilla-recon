@@ -1011,7 +1011,7 @@ void Plant::UpdateProductionPlant()
 
     if (mApp->mGameMode == GameMode::GAMEMODE_CHALLENGE_LAST_STAND && mBoard->mChallenge->mChallengeState != ChallengeState::STATECHALLENGE_LAST_STAND_ONSLAUGHT)
         return;
-    mBoard->AddCoin(mX, mY, CoinType::COIN_CHOCOLATE, CoinMotion::COIN_MOTION_FROM_PLANT);
+   
     mLaunchCounter--;
     if (mLaunchCounter <= 100)
     {
