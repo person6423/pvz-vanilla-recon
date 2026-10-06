@@ -33,18 +33,17 @@ LawnDialog::LawnDialog(LawnApp* theApp, int theId, bool isModal, const SexyStrin
 
     if (theButtonMode == 1)
     {
-        mLawnYesButton = MakeButton(ID_YES, this, _S("[DIALOG_BUTTON_YES]")); //--VANILLA_FIX: Replaced button ID with an enum.
-                                                                              //               Use translated button strings instead of hardcoded strings.
-        mLawnNoButton = MakeButton(ID_NO, this, _S("[DIALOG_BUTTON_NO]")); //--VANILLA_FIX: Ditto.
+        mLawnYesButton = MakeButton(ID_YES, this, _S("Yes")); //--VANILLA_FIX: Replaced button ID with an enum.
+        mLawnNoButton = MakeButton(ID_NO, this, _S("No")); //--VANILLA_FIX: Ditto.
     }
     else if (theButtonMode == 2)
     {
-        mLawnYesButton = MakeButton(ID_OK, this, _S("[DIALOG_BUTTON_OK]")); //--VANILLA_FIX: Ditto.
-        mLawnNoButton = MakeButton(ID_CANCEL, this, _S("[DIALOG_BUTTON_CANCEL]")); //--VANILLA_FIX: Ditto.
+        mLawnYesButton = MakeButton(ID_OK, this, _S("Ok")); //--VANILLA_FIX: Ditto.
+        mLawnNoButton = MakeButton(ID_CANCEL, this, _S("Cancel")); //--VANILLA_FIX: Ditto.
     }
     else if (theButtonMode == 3)
     {
-        mLawnYesButton = MakeButton(ID_OK, this, theDialogFooter); //--VANILLA_FIX: Replaced button ID with an enum.
+        mLawnYesButton = MakeButton(ID_OK, this, theDialogFooter); //--VANILLA_FIX: Ditto.
         mLawnNoButton = nullptr;
     }
     else
