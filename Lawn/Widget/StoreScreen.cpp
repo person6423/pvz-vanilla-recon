@@ -69,6 +69,7 @@ StoreScreen::StoreScreen(LawnApp* theApp) : Dialog(nullptr, nullptr, DIALOG_STOR
     Resize(0, 0, BOARD_WIDTH, BOARD_HEIGHT);
     mPottedPlantSpecs.InitializePottedPlant(SEED_MARIGOLD);
     mPottedPlantSpecs.mDrawVariation = (DrawVariation)RandRangeInt(VARIATION_MARIGOLD_WHITE, VARIATION_MARIGOLD_LIGHT_GREEN);
+	mPottedPlantSpecs.mFacing = PottedPlant::FACING_LEFT; //--VANILLA_FIX: Face the potted plant to the left.
 
     mBackButton = new NewLawnButton(nullptr, StoreScreen::StoreScreen_Back, this);
     mBackButton->mDoFinger = true;
@@ -340,7 +341,7 @@ void StoreScreen::DrawItemIcon(Graphics* g, int theItemPosition, StoreItem theIt
     }
     else if (theItemType == STORE_ITEM_TREE_FOOD)
     {
-        g->DrawImage(Sexy::IMAGE_TREEFOOD, aPosX - 8, aPosY - 2);
+        g->DrawImage(Sexy::IMAGE_TREEFOOD, aPosX - 11, aPosY - 2); //--VANILLA_FIX: Lower the x offset from -8 to -11.
     }
     else if (theItemType == STORE_ITEM_STINKY_THE_SNAIL)
     {
@@ -353,7 +354,7 @@ void StoreScreen::DrawItemIcon(Graphics* g, int theItemPosition, StoreItem theIt
     else if (theItemType == STORE_ITEM_FERTILIZER)
     {
         g->DrawImage(Sexy::IMAGE_FERTILIZER, aPosX - 11, aPosY - 2);
-        TodDrawString(g, _S("x5"), aPosX + 56, aPosY + 62, Sexy::FONT_HOUSEOFTERROR16, Color::White, DS_ALIGN_RIGHT);
+        TodDrawString(g, _S("x5"), aPosX + 54, aPosY + 62, Sexy::FONT_HOUSEOFTERROR16, Color::White, DS_ALIGN_RIGHT); //--VANILLA_FIX: Nudge 'x5' text 2 pixels to the left.
     }
     else if (theItemType == STORE_ITEM_PHONOGRAPH)
     {
@@ -362,7 +363,7 @@ void StoreScreen::DrawItemIcon(Graphics* g, int theItemPosition, StoreItem theIt
     else if (theItemType == STORE_ITEM_BUG_SPRAY)
     {
         g->DrawImage(Sexy::IMAGE_BUG_SPRAY, aPosX - 12, aPosY + 3);
-        TodDrawString(g, _S("x5"), aPosX + 56, aPosY + 62, Sexy::FONT_HOUSEOFTERROR16, Color::White, DS_ALIGN_RIGHT);
+        TodDrawString(g, _S("x5"), aPosX + 54, aPosY + 62, Sexy::FONT_HOUSEOFTERROR16, Color::White, DS_ALIGN_RIGHT); //--VANILLA_FIX: Nudge 'x5' text 2 pixels to the left.
     }
     else if (theItemType == STORE_ITEM_GARDENING_GLOVE)
     {
@@ -450,7 +451,7 @@ void StoreScreen::Draw(Graphics* g)
         g->DrawImage(Sexy::IMAGE_STORE_HATCHBACKOPEN, mShakeX + 299, mShakeY);
         if (mApp->IsNight())
         {
-            g->DrawImage(Sexy::IMAGE_STORE_CAR_NIGHT, mShakeX + 688, mShakeY + 193);
+			g->DrawImage(Sexy::IMAGE_STORE_CAR_NIGHT, mShakeX + 668, mShakeY + 193); //--VANILLA_FIX: Changed night's car x position from 688 to 668.
         }
     }
     else
@@ -458,7 +459,7 @@ void StoreScreen::Draw(Graphics* g)
         g->DrawImage(Sexy::IMAGE_STORE_CARCLOSED, mShakeX + 196, mShakeY + 138);
         if (mApp->IsNight())
         {
-            g->DrawImage(Sexy::IMAGE_STORE_CAR_NIGHT, mShakeX + 688, mShakeY + 193);
+            g->DrawImage(Sexy::IMAGE_STORE_CAR_NIGHT, mShakeX + 668, mShakeY + 193); //--VANILLA_FIX: Changed night's car x position from 688 to 668.
             g->DrawImage(Sexy::IMAGE_STORE_CARCLOSED_NIGHT, mShakeX + 337, mShakeY + 187);
         }
     }
@@ -485,7 +486,7 @@ void StoreScreen::Draw(Graphics* g)
     g->SetColor(Color(180, 255, 90));
     g->SetFont(Sexy::FONT_CONTINUUMBOLD14);
     SexyString aCoinLabel = mApp->GetMoneyString(mApp->mPlayerInfo->mCoins);
-    g->DrawString(aCoinLabel, STORESCREEN_COINBANK_X + 111 - Sexy::FONT_CONTINUUMBOLD14->StringWidth(aCoinLabel), STORESCREEN_COINBANK_Y + 24);
+    g->DrawString(aCoinLabel, STORESCREEN_COINBANK_X + 116 - Sexy::FONT_CONTINUUMBOLD14->StringWidth(aCoinLabel), STORESCREEN_COINBANK_Y + 24); //--VANILLA_FIX: Align the coin label's x position correctly.
 
     if (!mPrevButton->mDisabled)
     {
@@ -498,8 +499,9 @@ void StoreScreen::Draw(Graphics* g)
             }
         }
 
-        SexyString aPageString = TodReplaceNumberString(TodReplaceNumberString(_S("[STORE_PAGE]"), _S("{PAGE}"), mPage), _S("{NUM_PAGES}"), aNumPages);
-        TodDrawString(g, aPageString, STORESCREEN_PAGESTRING_X, STORESCREEN_COINBANK_Y, Sexy::FONT_BRIANNETOD12, Color(80, 80, 80), DS_ALIGN_CENTER);
+        SexyString aPageString = TodReplaceNumberString(TodReplaceNumberString(_S("[STORE_PAGE]"), _S("{PAGE}"), mPage + 1), _S("{NUM_PAGES}"), aNumPages); //--VANILLA_FIX: Add 1 to the current page.
+        TodDrawString(g, aPageString, STORESCREEN_PAGESTRING_X, STORESCREEN_PAGESTRING_Y, Sexy::FONT_BRIANNETOD12, Color(128, 128, 128), DS_ALIGN_CENTER); //--VANILLA_FIX: Use the page string's y position instead of coinbank's y position.
+                                                                                                                                                           //               Up the shade of white from 80 to 128.
     }
 }
 
