@@ -493,7 +493,7 @@ void Music::FadeOut(int theFadeOutDuration)
 //0x45B260
 void Music::UpdateMusicBurst()
 {
-	if (mApp->mBoard == nullptr)
+	if (mApp->mBoard == nullptr || mApp->mGameMode == GameMode::GAMEMODE_INTRO) //--VANILLA_FIX: Prevent Intro from playing horde music.
 		return;
 
 	int aBurstScheme;
