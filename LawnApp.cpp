@@ -2162,7 +2162,7 @@ bool LawnApp::IsLittleTroubleLevel()
 //0x4538F0
 bool LawnApp::IsScaryPotterLevel()
 {
-	if (mGameMode >= GameMode::GAMEMODE_SCARY_POTTER_1 && mGameMode <= GameMode::GAMEMODE_SCARY_POTTER_9)
+	if (mGameMode >= GameMode::GAMEMODE_SCARY_POTTER_1 && mGameMode <= GameMode::GAMEMODE_SCARY_POTTER_ENDLESS) //--VANILLA_FIX: Include Vasebreaker Endless as a Vasebreaker level.
 		return true;
 
 	return IsAdventureMode() && mPlayerInfo->mLevel == 35;
