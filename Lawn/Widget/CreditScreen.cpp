@@ -845,7 +845,7 @@ void CreditScreen::Draw(Graphics* g)
         {
             Graphics aBackground1G(*g);
             aBackground1G.ClipRect(aTransformBackground1.mTransX, aTransformBackground1.mTransY, aTransformBackground1.mImage->mWidth - 1, aTransformBackground1.mImage->mHeight - 1);
-            aBackground1G.DrawImageF(IMAGE_BACKGROUND1, aTransformBackground1.mTransX - BOARD_WIDTH / 2, aTransformBackground1.mTransY - BOARD_HEIGHT / 2);
+            aBackground1G.DrawImageF(IMAGE_BACKGROUND1, aTransformBackground1.mTransX - BOARD_WIDTH / 2 + 320, aTransformBackground1.mTransY - BOARD_HEIGHT / 2 - 60); //--VANILLA_FIX: Move the background to the left 320 pixels and down 60 pixels.
         }
         if (aTransformBackground3.mFrame != -1.0f)
         {
