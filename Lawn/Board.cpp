@@ -3273,8 +3273,8 @@ void Board::UpdateToolTip()
 		return;
 	}
 
-	int aMouseX = mApp->mWidgetManager->mLastMouseX - mX;
-	int aMouseY = mApp->mWidgetManager->mLastMouseY - mY;
+	int aMouseX = mApp->mWidgetManager->mLastMouseX - mX; //--VANILLA_FIX: Point to mApp's pointer to mWidgetManager, for some reason Board's mWidgetManager is 0x0 here.
+	int aMouseY = mApp->mWidgetManager->mLastMouseY - mY; //--VANILLA_FIX: Ditto.
 
 	if (mApp->mGameScene == GameScenes::SCENE_LEVEL_INTRO)
 	{
@@ -5615,7 +5615,7 @@ void Board::UpdateTutorial()
 	if (mTutorialState == TutorialState::TUTORIAL_LEVEL_1_PICK_UP_PEASHOOTER && mTutorialTimer == 0)
 	{
 		DisplayAdvice(_S("[ADVICE_CLICK_PEASHOOTER]"), MessageStyle::MESSAGE_STYLE_TUTORIAL_LEVEL1_STAY, AdviceType::ADVICE_NONE);
-		TutorialArrowShow(mSeedBank->mX + mSeedBank->mSeedPackets[1].mX, mSeedBank->mY + mSeedBank->mSeedPackets[1].mY);
+		TutorialArrowShow(mSeedBank->mX + mSeedBank->mSeedPackets[0].mX, mSeedBank->mY + mSeedBank->mSeedPackets[0].mY); //--VANILLA_FIX: Place the arrow at the first seed packet position, not the second.
 		mTutorialTimer = -1;
 	}
 	else if (mTutorialState == TutorialState::TUTORIAL_LEVEL_2_PICK_UP_SUNFLOWER || 
