@@ -3273,8 +3273,8 @@ void Board::UpdateToolTip()
 		return;
 	}
 
-	int aMouseX = mWidgetManager->mLastMouseX - mX;
-	int aMouseY = mWidgetManager->mLastMouseY - mY;
+	int aMouseX = mApp->mWidgetManager->mLastMouseX - mX;
+	int aMouseY = mApp->mWidgetManager->mLastMouseY - mY;
 
 	if (mApp->mGameScene == GameScenes::SCENE_LEVEL_INTRO)
 	{
