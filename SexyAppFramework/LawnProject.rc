@@ -87,3 +87,28 @@ IDI_MAIN_ICON               ICON                    "..\\main_icon.ico"
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
 
+1 VERSIONINFO
+FILEVERSION 1, 0, 0, 1051
+PRODUCTVERSION 1, 0, 0, 1051
+FILEOS 0x4
+FILETYPE 0x1
+{
+	BLOCK "StringFileInfo"
+	{
+		BLOCK "040904b0"
+		{
+			VALUE "FileDescription", "Plants vs. Zombies"
+				VALUE "FileVersion", "1.0.0.1051"
+				VALUE "InternalName", "Plants vs. Zombies"
+				VALUE "LegalCopyright", "Copyright (C) 2009"
+				VALUE "OriginalFilename", "PlantsVsZombies.exe"
+				VALUE "ProductName", "Plants vs. Zombies"
+				VALUE "ProductVersion", "1.0.0.1051"
+		}
+	}
+
+	BLOCK "VarFileInfo"
+	{
+		VALUE "Translation", 0x0409 0x04B0
+	}
+}
