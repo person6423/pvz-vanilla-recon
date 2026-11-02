@@ -87,7 +87,7 @@ IDI_MAIN_ICON               ICON                    "..\\main_icon.ico"
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
 
-1 VERSIONINFO
+1 VERSIONINFO //--VANILLA_FIX: Add version info to the exe.
 FILEVERSION 1, 0, 0, 1051
 PRODUCTVERSION 1, 0, 0, 1051
 FILEOS 0x4
