@@ -3191,7 +3191,7 @@ void Board::UpdateMousePosition()
 			}
 		}
 
-		if (!mPaused)
+		if (!mPaused) //--VANILLA_FIX: Rework if statement to check for if the game is paused before highlighting pots.
 		{
 			HitResult aHitResult;
 			MouseHitTest(aMouseX, aMouseY, &aHitResult);
