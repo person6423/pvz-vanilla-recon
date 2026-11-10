@@ -3191,13 +3191,16 @@ void Board::UpdateMousePosition()
 			}
 		}
 
-		HitResult aHitResult;
-		MouseHitTest(aMouseX, aMouseY, &aHitResult);
-		if (aHitResult.mObjectType == GameObjectType::OBJECT_TYPE_SCARY_POT)
+		if (!mPaused)
 		{
-			GridItem* aScaryPot = (GridItem*)aHitResult.mObject;
-			aScaryPot->mHighlighted = true;
-			return;
+			HitResult aHitResult;
+			MouseHitTest(aMouseX, aMouseY, &aHitResult);
+			if (aHitResult.mObjectType == GameObjectType::OBJECT_TYPE_SCARY_POT)
+			{
+				GridItem* aScaryPot = (GridItem*)aHitResult.mObject;
+				aScaryPot->mHighlighted = true;
+				return;
+			}
 		}
 	}
 
